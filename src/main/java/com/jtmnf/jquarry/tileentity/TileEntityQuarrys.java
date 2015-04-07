@@ -26,6 +26,12 @@ public class TileEntityQuarrys extends TileEntity implements IEnergyHandler {
     }
 
     @Override
+    public void updateEntity() {
+        super.updateEntity();
+        /* TODO */
+    }
+
+    @Override
     public int receiveEnergy(ForgeDirection from, int maxReceive, boolean simulate) {
         return energyStorage.receiveEnergy(maxReceive, simulate);
     }
