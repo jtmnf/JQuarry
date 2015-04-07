@@ -1,0 +1,17 @@
+[
+{
+    "modid": "JQuarry",
+    "name": "JQuarry",
+    "description": "More Quarrys",
+    "version": "1.4.1",
+    "mcversion": "1.7.10",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [ "jtmnf" ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [ ],
+    "parent": "",
+    "dependencies": [ ]
+}
+]

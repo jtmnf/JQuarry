@@ -1,0 +1,20 @@
+# BLOCKS
+tile.jquarry:dirtQuarry.name=Dirt Quarry
+tile.jquarry:gravelQuarry.name=Gravel Quarry
+tile.jquarry:sandQuarry.name=Sand Quarry
+tile.jquarry:stoneQuarry.name=Stone Quarry
+tile.jquarry:coalQuarry.name=Coal Quarry
+tile.jquarry:ironQuarry.name=Iron Quarry
+tile.jquarry:lapisQuarry.name=Lapis Quarry
+tile.jquarry:goldQuarry.name=Gold Quarry
+tile.jquarry:redstoneQuarry.name=Redstone Quarry
+tile.jquarry:diamondQuarry.name=Diamond Quarry
+
+tile.jquarry:netherQuarry.name=Nether Quarry
+tile.jquarry:quartzQuarry.name=Quartz Quarry
+
+# ITEMS
+item.jquarry:upgradeQuarry.name=Enlarge Area
+
+# CREATIVE TAB
+itemGroup.jquarry=JQuarry
