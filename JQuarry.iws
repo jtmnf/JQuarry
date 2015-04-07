@@ -112,8 +112,8 @@
       <file leaf-file-name="TileEntityQuarrys.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jtmnf/jquarry/tileentity/TileEntityQuarrys.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7759473" vertical-offset="158" max-vertical-offset="782">
-              <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.7759473" vertical-offset="124" max-vertical-offset="731">
+              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -646,15 +646,15 @@
       <workItem from="1428236468021" duration="5712000" />
       <workItem from="1428242924170" duration="12080000" />
       <workItem from="1428400666331" duration="6779000" />
-      <workItem from="1428418897320" duration="111000" />
+      <workItem from="1428418897320" duration="719000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74925000" />
+    <option name="totallyTimeSpent" value="75533000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1101,8 +1101,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jtmnf/jquarry/tileentity/TileEntityQuarrys.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7759473" vertical-offset="158" max-vertical-offset="782">
-          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.7759473" vertical-offset="124" max-vertical-offset="731">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
           <folding />
         </state>
       </provider>

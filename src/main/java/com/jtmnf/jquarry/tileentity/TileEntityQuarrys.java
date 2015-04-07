@@ -6,6 +6,8 @@ import com.jtmnf.jquarry.handler.JQuarryConfiguration;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fluids.FluidContainerRegistry;
+import net.minecraftforge.fluids.IFluidHandler;
 
 public class TileEntityQuarrys extends TileEntity implements IEnergyHandler {
 
@@ -47,7 +49,4 @@ public class TileEntityQuarrys extends TileEntity implements IEnergyHandler {
     public boolean canConnectEnergy(ForgeDirection from) {
         return JQuarryConfiguration.requireEnergy;
     }
-
-    
-
 }
