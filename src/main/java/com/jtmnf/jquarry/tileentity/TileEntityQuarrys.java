@@ -53,6 +53,6 @@ public class TileEntityQuarrys extends TileEntity implements IEnergyHandler {
 
     @Override
     public boolean canConnectEnergy(ForgeDirection from) {
-        return JQuarryConfiguration.requireEnergy;
+        return true;
     }
 }

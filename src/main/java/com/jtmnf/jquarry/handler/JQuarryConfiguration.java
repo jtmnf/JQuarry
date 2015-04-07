@@ -15,7 +15,6 @@ public class JQuarryConfiguration {
 
     public static Configuration configuration;
 
-    public static boolean requireEnergy = true;
     public static int rfEnergy = 20;
     public static int maxEnergyStored = 1000000;
 
@@ -41,7 +40,6 @@ public class JQuarryConfiguration {
     }
 
     private static void loadConfiguration(){
-        requireEnergy = configuration.getBoolean("requireEnergy", "Energy", true, "Quarries require energy");
         rfEnergy = configuration.getInt("rfEnergy", "Energy", 20, 0, 100, "Energy required PER BLOCK MINED");
         maxEnergyStored = configuration.getInt("maxEnergyStored", "Energy", 500000, 5000, 1000000, "Max energy stored in quarries");
 

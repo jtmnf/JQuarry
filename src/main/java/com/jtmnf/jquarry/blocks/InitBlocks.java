@@ -99,11 +99,9 @@ public class InitBlocks extends Block {
                 return false;
             }
 
-            if(JQuarryConfiguration.requireEnergy) {
-                if (tileEntityBlock.energyStorage.getEnergyStored() < 20) {
-                    player.addChatMessage(new ChatComponentText("[JQuarry] Not enought energy!"));
-                    return false;
-                }
+            if (tileEntityBlock.energyStorage.getEnergyStored() < 20) {
+                player.addChatMessage(new ChatComponentText("[JQuarry] Not enought energy!"));
+                return false;
             }
 
             boolean isFull;
@@ -111,7 +109,7 @@ public class InitBlocks extends Block {
             for(int i = iMin; i < iMax; ++i){
                 for(int j = jMin; j < jMax; ++j){
                     for(int z = tagCompound.getInteger("yCoord"); z > 0; --z){
-                        if(world.getBlock(i, z, j) ==  Block.blockRegistry.getObject(tagCompound.getString("block")) && ((tileEntityBlock.energyStorage.getEnergyStored() >= JQuarryConfiguration.rfEnergy || JQuarryConfiguration.requireEnergy == false))){
+                        if(world.getBlock(i, z, j) ==  Block.blockRegistry.getObject(tagCompound.getString("block")) && (tileEntityBlock.energyStorage.getEnergyStored() >= JQuarryConfiguration.rfEnergy)){
                             EntityItem blockItem = new EntityItem(world, tagCompound.getInteger("xCoord"), tagCompound.getInteger("yCoord")+1, tagCompound.getInteger("zCoord"), new ItemStack(Block.getBlockFromName(tagCompound.getString("block"))));
 
                             isFull = true;
@@ -134,9 +132,7 @@ public class InitBlocks extends Block {
                                 return false;
                             }
 
-                            if(JQuarryConfiguration.requireEnergy) {
-                                tileEntityBlock.energyStorage.setEnergyStored(tileEntityBlock.energyStorage.getEnergyStored() - JQuarryConfiguration.rfEnergy);
-                            }
+                            tileEntityBlock.energyStorage.setEnergyStored(tileEntityBlock.energyStorage.getEnergyStored() - JQuarryConfiguration.rfEnergy);
 
                             blocksMined++;
 

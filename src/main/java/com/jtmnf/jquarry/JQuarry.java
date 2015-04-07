@@ -16,6 +16,8 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 
+import java.io.File;
+
 @Mod(modid = JQuarryReference.MOD_ID, name = JQuarryReference.MOD_NAME, version = JQuarryReference.VERSION)
 public class JQuarry {
 
@@ -25,8 +27,13 @@ public class JQuarry {
     @SidedProxy(clientSide = JQuarryReference.CLIENT_PROXY_CLASS, serverSide = JQuarryReference.SERVER_PROXY_CLASS)
     public static IProxy proxy;
 
+    private File configOres;
+
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
+        /* Extra Ores */
+        configOres = event.getSuggestedConfigurationFile();
+
         JQuarryConfiguration.initConfigFiles(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new JQuarryConfiguration());
 
