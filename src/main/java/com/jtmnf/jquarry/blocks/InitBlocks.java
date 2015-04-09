@@ -109,37 +109,38 @@ public class InitBlocks extends Block {
             for(int i = iMin; i < iMax; ++i){
                 for(int j = jMin; j < jMax; ++j){
                     for(int z = tagCompound.getInteger("yCoord"); z > 0; --z){
-                        if(world.getBlock(i, z, j) ==  Block.blockRegistry.getObject(tagCompound.getString("block")) && (tileEntityBlock.energyStorage.getEnergyStored() >= JQuarryConfiguration.rfEnergy)){
-                            EntityItem blockItem = new EntityItem(world, tagCompound.getInteger("xCoord"), tagCompound.getInteger("yCoord")+1, tagCompound.getInteger("zCoord"), new ItemStack(Block.getBlockFromName(tagCompound.getString("block"))));
+                        if(world.getBlock(i, z, j) ==  Block.blockRegistry.getObject(tagCompound.getString("block")) /*&& (tileEntityBlock.energyStorage.getEnergyStored() >= JQuarryConfiguration.rfEnergy)*/) {
+                            if (world.getBlockMetadata(i, z, j) == tileEntityBlock.metadata || world.getBlock(i, z, j) == Blocks.redstone_ore) {
+                                EntityItem blockItem = new EntityItem(world, tagCompound.getInteger("xCoord"), tagCompound.getInteger("yCoord") + 1, tagCompound.getInteger("zCoord"), new ItemStack(Block.getBlockFromName(tagCompound.getString("block")), 1, tileEntityBlock.metadata));
 
-                            isFull = true;
-                            for(int ii = 0; ii < iInventory.getSizeInventory(); ++ii){
-                                if(iInventory.getStackInSlot(ii) == null){
-                                    iInventory.setInventorySlotContents(ii, blockItem.getEntityItem());
-                                    ii = iInventory.getSizeInventory()+1;
-                                    isFull = false;
+                                isFull = true;
+                                for (int ii = 0; ii < iInventory.getSizeInventory(); ++ii) {
+                                    if (iInventory.getStackInSlot(ii) == null) {
+                                        iInventory.setInventorySlotContents(ii, blockItem.getEntityItem());
+                                        ii = iInventory.getSizeInventory() + 1;
+                                        isFull = false;
+                                    } else if (iInventory.getStackInSlot(ii).getUnlocalizedName().contains(Block.getBlockFromName(tagCompound.getString("block")).getUnlocalizedName()) && iInventory.getStackInSlot(ii).stackSize < 64) {
+                                        iInventory.getStackInSlot(ii).stackSize++;
+                                        ii = iInventory.getSizeInventory() + 1;
+                                        isFull = false;
+                                    }
                                 }
-                                else if(iInventory.getStackInSlot(ii).getUnlocalizedName().contains(Block.getBlockFromName(tagCompound.getString("block")).getUnlocalizedName()) && iInventory.getStackInSlot(ii).stackSize < 64){
-                                    iInventory.getStackInSlot(ii).stackSize++;
-                                    ii = iInventory.getSizeInventory()+1;
-                                    isFull = false;
+
+                                if (isFull) {
+                                    player.addChatMessage(new ChatComponentText("[JQuarry] Quarry " + (extraTerrain + 1) + "x" + (extraTerrain + 1) + " not completed, mined " + blocksMined + " block(s)!"));
+                                    player.addChatMessage(new ChatComponentText("[JQuarry] Inventory of " + upBlock.getLocalizedName() + " is full!"));
+                                    return false;
                                 }
+
+                                tileEntityBlock.energyStorage.setEnergyStored(tileEntityBlock.energyStorage.getEnergyStored() - JQuarryConfiguration.rfEnergy);
+
+                                blocksMined++;
+
+                                world.setBlock(i, z, j, Blocks.air);
                             }
-
-                            if(isFull){
-                                player.addChatMessage(new ChatComponentText("[JQuarry] Quarry "+(extraTerrain+1)+"x"+(extraTerrain+1)+" not completed, mined "+blocksMined+" block(s)!"));
-                                player.addChatMessage(new ChatComponentText("[JQuarry] Inventory of "+upBlock.getLocalizedName()+" is full!"));
-                                return false;
-                            }
-
-                            tileEntityBlock.energyStorage.setEnergyStored(tileEntityBlock.energyStorage.getEnergyStored() - JQuarryConfiguration.rfEnergy);
-
-                            blocksMined++;
-
-                            world.setBlock(i, z, j, Blocks.air);
                         }
                         else if(tileEntityBlock.energyStorage.getEnergyStored() <= 0 ){
-                            player.addChatMessage(new ChatComponentText("[JQuarry] Not enought energy to finish the quarry!"));
+                            player.addChatMessage(new ChatComponentText("[JQuarry] Not enough energy to finish the quarry!"));
                             return false;
                         }
                     }

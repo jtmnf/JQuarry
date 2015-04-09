@@ -2,6 +2,12 @@ package com.jtmnf.jquarry.init;
 
 import com.jtmnf.jquarry.blocks.*;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class JQuarryBlocks {
 
@@ -33,5 +39,35 @@ public class JQuarryBlocks {
 
         GameRegistry.registerBlock(netherQuarry, ToolTipBlocks.class, "netherQuarry");
         GameRegistry.registerBlock(quartzQuarry, ToolTipBlocks.class, "quartzQuarry");
+    }
+
+    public static void initJQuarryDependencies(List<String> list){
+        ArrayList<DependenciesQuarry> temp = new ArrayList<DependenciesQuarry>();
+
+        for(int i = 0 ; i < list.size(); i += 4){
+            if(i+2 < list.size()){
+                String blockName = list.get(i+2);
+
+                if(blockName != null){
+                    if(Block.blockRegistry.getObject(list.get((i))) != Blocks.air){
+                        temp.add(new DependenciesQuarry((Block) Block.blockRegistry.getObject(list.get(i)), Integer.parseInt(list.get(i+1)), blockName, list.get(i+3)));
+
+                        GameRegistry.registerBlock(temp.get(temp.size()-1), ToolTipBlocks.class , "dependencyQuarry."+blockName);
+                    }
+                }
+            }
+        }
+
+        for(int i = 0; i < temp.size(); ++i){
+            GameRegistry.addShapedRecipe(new ItemStack(temp.get(i).getThis(), 1),
+                    "BBB",
+                    "CIC",
+                    "WCW",
+                    'B', new ItemStack(temp.get(i).getBlock(), 1, temp.get(i).getMetadata()),
+                    'I', JQuarryBlocks.ironQuarry,
+                    'C', Blocks.cobblestone,
+                    'W', Blocks.planks
+            );
+        }
     }
 }

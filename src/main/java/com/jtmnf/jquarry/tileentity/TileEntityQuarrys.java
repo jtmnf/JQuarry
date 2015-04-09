@@ -10,18 +10,30 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.IFluidHandler;
 
 public class TileEntityQuarrys extends TileEntity implements IEnergyHandler {
+    public int metadata;
+
+    public TileEntityQuarrys(int metadata){
+        this.metadata = metadata;
+    }
+
+    public TileEntityQuarrys(){
+        this.metadata = 0;
+    }
 
     public final EnergyStorage energyStorage = new EnergyStorage(JQuarryConfiguration.maxEnergyStored);
 
     @Override
     public void readFromNBT(NBTTagCompound tagCompound) {
         super.readFromNBT(tagCompound);
+
         energyStorage.readFromNBT(tagCompound);
     }
 
     @Override
     public void writeToNBT(NBTTagCompound tagCompound) {
         super.writeToNBT(tagCompound);
+
+        tagCompound.setInteger("metadata", metadata);
         energyStorage.writeToNBT(tagCompound);
     }
 

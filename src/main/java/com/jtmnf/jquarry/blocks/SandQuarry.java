@@ -48,6 +48,6 @@ public class SandQuarry extends InitBlocks {
 
     @Override
     public TileEntity createTileEntity(World world, int metadata) {
-        return new TileEntityQuarrys();
+        return new TileEntityQuarrys(0);
     }
 }

@@ -1,15 +1,21 @@
 package com.jtmnf.jquarry.blocks;
 
+import com.jtmnf.jquarry.JQuarry;
+import com.jtmnf.jquarry.init.JQuarryBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.StatCollector;
 
 import java.util.List;
 
 public class ToolTipBlocks extends ItemBlock{
-    public ToolTipBlocks(Block p_i45328_1_) {
-        super(p_i45328_1_);
+    InitBlocks block;
+
+    public ToolTipBlocks(Block block) {
+        super(block);
+        this.block = (InitBlocks) block;
     }
 
     @Override
