@@ -1,0 +1,26 @@
+{
+	"ores":	[	
+				"ThermalFoundation:Ore", "0", "oreCopperTE", "thermalfoundation:ore/Ore_Copper",
+				"ThermalFoundation:Ore", "1", "oreTinTE", "thermalfoundation:ore/Ore_Tin",
+				"ThermalFoundation:Ore", "2", "oreSilverTE", "thermalfoundation:ore/Ore_Silver",
+				"ThermalFoundation:Ore", "3", "oreLeadTE", "thermalfoundation:ore/Ore_Lead",
+				"ThermalFoundation:Ore", "4", "oreNickelTE", "thermalfoundation:ore/Ore_Nickel",
+				"ThermalFoundation:Ore", "5", "orePlatinumTE", "thermalfoundation:ore/Ore_Platinum",
+				"BigReactors:YelloriteOre", "0", "oreYelloriteBR", "bigreactors:oreYellorite",
+				"harvestcraft:salt", "0", "oreSaltH", "harvestcraft:salt",
+				"Forestry:resources", "0", "oreApatiteF", "Forestry:ores/apatite",
+				"Forestry:resources", "1", "oreTinF", "Forestry:ores/tin", 
+				"Forestry:resources", "2", "oreCopperF", "Forestry:ores/copper",
+				"Railcraft:tile.railcraft.ore", "0", "oreSulfurRC", "railcraft:ore.sulfur",
+				"Railcraft:tile.railcraft.ore", "1", "oreSaltRC", "railcraft:ore.saltpeter",
+				"Railcraft:tile.railcraft.ore", "2", "oreSulferRC", "railcraft:ore.dark.diamond",
+				"Railcraft:tile.railcraft.ore", "3", "oreSulferRC", "railcraft:ore.dark.emerald",
+				"Railcraft:tile.railcraft.ore", "4", "oreSulferRC", "railcraft:ore.dark.lapis",
+				"Railcraft:tile.railcraft.ore", "5", "oreSulferRC", "railcraft:ore.firestone",
+				"Thaumcraft:blockCustomOre", "0", "oreCinnibarTH", "thaumcraft:cinnibar",
+				"Thaumcraft:blockCustomOre", "7", "oreAmberTH", "thaumcraft:amberore",
+				"appliedenergistics2:tile.OreQuartz", "0", "oreQuartzAE", "appliedenergistics2:OreQuartz",
+				"appliedenergistics2:tile.OreQuartzCharged", "0", "oreQuartzChargedAE", "appliedenergistics2:OreQuartzCharged",
+				"IC2:blockOreUran", "0", "oreUraniumIC", "IC2:blockOreUran",
+			]
+} 
