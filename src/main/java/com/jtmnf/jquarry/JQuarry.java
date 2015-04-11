@@ -6,6 +6,7 @@ import com.jtmnf.jquarry.init.JQuarryItems;
 import com.jtmnf.jquarry.init.JQuarryRecipes;
 import com.jtmnf.jquarry.init.JQuarryTiles;
 import com.jtmnf.jquarry.modload.GetModsDependencies;
+import com.jtmnf.jquarry.proxy.ClientProxy;
 import com.jtmnf.jquarry.proxy.IProxy;
 import com.jtmnf.jquarry.reference.JQuarryReference;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -61,6 +62,8 @@ public class JQuarry {
         }
 
         JQuarryRecipes.initRecipes();
+
+        ClientProxy.setCustomRenderers();
     }
 
     @Mod.EventHandler

@@ -44,13 +44,13 @@ public class JQuarryBlocks {
     public static void initJQuarryDependencies(List<String> list){
         ArrayList<DependenciesQuarry> temp = new ArrayList<DependenciesQuarry>();
 
-        for(int i = 0 ; i < list.size(); i += 4){
+        for(int i = 0 ; i < list.size(); i += 5){
             if(i+2 < list.size()){
                 String blockName = list.get(i+2);
 
                 if(blockName != null){
                     if(Block.blockRegistry.getObject(list.get((i))) != Blocks.air){
-                        temp.add(new DependenciesQuarry((Block) Block.blockRegistry.getObject(list.get(i)), Integer.parseInt(list.get(i+1)), blockName, list.get(i+3)));
+                        temp.add(new DependenciesQuarry((Block) Block.blockRegistry.getObject(list.get(i)), Integer.parseInt(list.get(i+1)), blockName, list.get(i+3), list.get(i+4)));
 
                         GameRegistry.registerBlock(temp.get(temp.size()-1), ToolTipBlocks.class , "dependencyQuarry."+blockName);
                     }
